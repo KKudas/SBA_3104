@@ -1,0 +1,14 @@
+{
+  "name": "waterwarriors",
+  "version": "1.0.0",
+  "description": "This proof of concept website is designed to serve as a collaborative, user-driven wiki focused on geology. It aims to provide a comprehensive platform for learning, sharing, and contributing knowledge on various geology-related topics, from rock formations to tectonic processes. The site will allow users to explore articles, add content, edit existing entries, and engage with the community in discussions about Earth's structure, materials, and dynamic systems.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

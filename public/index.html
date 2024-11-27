@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.122.0" />
+    <title>Water Warriors Publication</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/blog/"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+    />
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        />
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        />
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        />
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 text-center">
+            <a
+              class="blog-header-logo text-body-emphasis text-decoration-none"
+              href="#"
+              >Water Warriors Publication™</a
+            >
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" href="#" aria-label="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="mx-3"
+                role="img"
+                viewBox="0 0 24 24"
+              >
+                <title>Search</title>
+                <circle cx="10.5" cy="10.5" r="7.5" />
+                <path d="M21 21l-5.2-5.2" />
+              </svg>
+            </a>
+            <a class="btn btn-sm btn-outline-secondary" href="#">Log in</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+          <a class="nav-item nav-link link-body-emphasis active" href="#"
+            >Geology</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Time Scale</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Plate Tectonics</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Volcanology</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Seismology</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Sedimentology</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#">Tectonics</a>
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Geochemistry</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Geomorphology</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Environment</a
+          >
+          <a class="nav-item nav-link link-body-emphasis" href="#"
+            >Mineralogy</a
+          >
+        </nav>
+      </div>
+    </div>
+
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" style="background-image: url('IMAGES/rocks.png');">
+        <div class="col-lg-6 px-0">
+          <h1 class="display-4"style="color: black" ><br><br></h1>
+          <p class="lead my-3" style="color: black">
+           
+          </p>
+          <p class="lead mb-0">
+         
+          </p>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">Geology</strong>
+                    <h3 class="mb-0">Unraveling the Secrets of Earth’s Oldest Rocks</h3>
+                    <div class="mb-1 text-body-secondary">Nov 12</div>
+                    <p class="card-text mb-auto">
+                        Ever wondered how ancient rocks can tell the story of Earth's early days? Dive into the world...
+                    </p>
+                    <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                        Continue reading
+                       
+                    </a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <div class="thumbnail-container">
+                        <img
+                            src="IMAGES/oldrock.png" 
+                            alt="Thumbnail"
+                            width="200"
+                            height="250"
+                            class="bd-placeholder-img"
+                            style="object-fit: cover;" 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis"
+                >Seismology</strong
+              >
+              <h3 class="mb-0">
+                Inside the Heart of a Volcano: How Magma Moves
+              </h3>
+              <div class="mb-1 text-body-secondary">Nov 11</div>
+              <p class="mb-auto">
+                Ever wondered how magma flows beneath the Earth's surface?
+                Explore the journey o...
+              </p>
+              <a
+                href="#"
+                class="icon-link gap-1 icon-link-hover stretched-link"
+              >
+                Continue reading
+           
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <div class="thumbnail-container">
+                  <img
+                      src="IMAGES/volcano.png" 
+                      alt="Thumbnail"
+                      width="200"
+                      height="250"
+                      class="bd-placeholder-img"
+                      style="object-fit: cover;" 
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            From the Water Warriors
+          </h3>
+
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">About Volcanoes</h2>
+            <p class="blog-post-meta">
+              Source:
+              <a href="https://en.wikipedia.org/wiki/Volcano">Wikipedia</a>
+            </p>
+
+            <p>
+              A volcano is a rupture in the crust of a planetary-mass object,
+              such as Earth, that allows hot lava, volcanic ash, and gases to
+              escape from a magma chamber below the surface. The process that
+              forms volcanoes is called volcanism.
+            </p>
+
+            <p>
+              On Earth, volcanoes are most often found where tectonic plates are
+              diverging or converging, and because most of Earth's plate
+              boundaries are underwater, most volcanoes are found underwater.
+              For example, a mid-ocean ridge, such as the Mid-Atlantic Ridge,
+              has volcanoes caused by divergent tectonic plates, whereas the
+              Pacific Ring of Fire has volcanoes caused by convergent tectonic
+              plates. Volcanoes can also form where there is stretching and
+              thinning of the crust's plates, such as in the East African Rift,
+              the Wells Gray-Clearwater volcanic field, and the Rio Grande rift
+              in North America. Volcanism away from plate boundaries has been
+              postulated to arise from upwelling diapirs from the core–mantle
+              boundary, 3,000 kilometers (1,900 mi) deep within Earth. This
+              results in hotspot volcanism, of which the Hawaiian hotspot is an
+              example. Volcanoes are usually not created where two tectonic
+              plates slide past one another.
+            </p>
+            <p>
+              Large eruptions can affect atmospheric temperature as ash and
+              droplets of sulfuric acid obscure the Sun and cool Earth's
+              troposphere. Historically, large volcanic eruptions have been
+              followed by volcanic winters which have caused catastrophic
+              famines.
+            </p>
+            <p>
+              Other planets besides Earth have volcanoes. For example, volcanoes
+              are very numerous on Venus. In 2009, a paper was published
+              suggesting a new definition for the word 'volcano' that includes
+              processes such as cryovolcanism. It suggested that a volcano be
+              defined as 'an opening on a planet or moon's surface from which
+              magma, as defined for that body, and/or magmatic gas is erupted.'
+            </p>
+
+            <h2>Etymology</h2>
+
+            <hr />
+
+            <p>
+              The word volcano is derived from the name of Vulcano, a volcanic
+              island in the Aeolian Islands of Italy whose name in turn comes
+              from Vulcan, the god of fire in Roman mythology. The study of
+              volcanoes is called volcanology, sometimes spelled vulcanology.
+            </p>
+
+            <h2>Plate tectonics</h2>
+
+            <hr />
+
+            <p>
+              According to the theory of plate tectonics, Earth's lithosphere,
+              its rigid outer shell, is broken into sixteen larger and several
+              smaller plates. These plates are in slow motion due to convection
+              in the underlying ductile mantle, and most volcanic activity on
+              Earth occurs along plate boundaries, where plates are converging
+              (resulting in lithosphere destruction) or diverging (leading to
+              new lithosphere formation).
+            </p>
+
+            <p>
+              Throughout the development of geological theory, certain concepts
+              emerged that allowed for the grouping of volcanoes based on time,
+              place, structure, and composition. For example, some volcanoes are
+              polygenetic, featuring more than one period of activity during
+              their history, while others, which become extinct after erupting
+              only once, are monogenetic (meaning "one life"). Such volcanoes
+              are often grouped together in specific geographical regions.
+            </p>
+
+            <h5>Divergent Plate Boundaries</h5>
+
+            <p>
+              At mid-ocean ridges, two tectonic plates diverge as hot mantle
+              rock creeps upwards beneath the thinned oceanic crust. The
+              decrease in pressure of the rising mantle rock leads to adiabatic
+              expansion and the partial melting of the rock, causing volcanism
+              and creating new oceanic crust. Most divergent plate boundaries
+              are found at the bottom of the oceans, resulting in most volcanic
+              activity on Earth occurring submarine, forming new seafloor. Black
+              smokers, also known as deep-sea vents, are evidence of this kind
+              of volcanic activity. Where the mid-oceanic ridge is above sea
+              level, volcanic islands are formed, such as Iceland.
+            </p>
+
+            <h5>Convergent Plate Boundaries</h5>
+
+            <p>
+              Subduction zones occur where two plates, typically an oceanic
+              plate and a continental plate, collide. The oceanic plate subducts
+              beneath the continental plate, forming a deep ocean trench just
+              offshore. In a process called flux melting, water released from
+              the subducting plate lowers the melting temperature of the
+              overlying mantle wedge, thus creating magma. This magma tends to
+              be extremely viscous due to its high silica content, often cooling
+              and solidifying at depth before reaching the surface. When it does
+              reach the surface, a volcano is formed. Therefore, subduction
+              zones are bordered by chains of volcanoes known as volcanic arcs,
+              such as the Cascade Volcanoes and the volcanoes of the Japanese
+              Archipelago.
+            </p>
+
+            <h5>Hotspots</h5>
+
+            <p>
+              Hotspots are volcanic areas believed to be formed by mantle
+              plumes, which are columns of hot material rising from the
+              core-mantle boundary. Similar to mid-ocean ridges, the rising
+              mantle rock experiences decompression melting, generating large
+              volumes of magma. As tectonic plates move across mantle plumes,
+              each volcano becomes inactive as it drifts off the plume, while
+              new volcanoes are created where the plate advances over the plume.
+              The Hawaiian Islands are thought to have formed in this manner, as
+              well as the Snake River Plain, with the Yellowstone Caldera being
+              part of the North American plate currently above the Yellowstone
+              hotspot.
+            </p>
+
+            <h5>Continental Rifting</h5>
+
+            <p>
+              Sustained upwelling of hot mantle rock can occur under the
+              interior of a continent and lead to rifting. Early stages of
+              rifting are characterized by flood basalts and may progress to the
+              point where a tectonic plate is completely split. A divergent
+              plate boundary then develops between the two halves of the split
+              plate. However, rifting often fails to completely split the
+              continental lithosphere, and failed rifts are characterized by
+              volcanoes that erupt unusual alkali lava or carbonatites, such as
+              those in the East African Rift.
+            </p>
+          </article>
+        </div>
+
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem">
+            <div class="p-4 mb-3 bg-body-tertiary rounded">
+              <h4 class="fst-italic">About</h4>
+              <p class="mb-0">
+                We are a dynamic publication committed to delivering insightful
+                and engaging content across various topics. Our focus is on
+                making complex subjects, such as technology and science,
+                accessible to all readers.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="fst-italic">Recent posts</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        <a
+                            class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                            href="#"
+                        >
+                            <div class="image-container">
+                                <img
+                                    src="IMAGES/earthCrust.png" 
+                                    alt="Post Thumbnail"
+                                    width="100%"
+                                    height="96"
+                                    class="bd-placeholder-img"
+                                    style="object-fit: cover;" 
+                                />
+                            </div>
+                            <div class="col-lg-8">
+                                <h6 class="mb-0">
+                                    The Earth's Crust: A Dynamic Foundation
+                                </h6>
+                                <small class="text-body-secondary">January 15, 2024</small>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                  <a
+                    class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                    href="#"
+                  >
+                  <div class="image-container">
+                    <img
+                        src="IMAGES/coastal.png" 
+                        alt="Post Thumbnail"
+                        width="100%"
+                        height="96"
+                        class="bd-placeholder-img"
+                        style="object-fit: cover;" 
+                    />
+                </div>
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">
+                        Understanding Coastal Erosion: Nature's Slow Sculptor
+                      </h6>
+                      <small class="text-body-secondary"
+                        >January 14, 2024</small
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                    href="#"
+                  >
+                  <div class="image-container">
+                    <img
+                        src="IMAGES/waterShape.png" 
+                        alt="Post Thumbnail"
+                        width="100%"
+                        height="96"
+                        class="bd-placeholder-img"
+                        style="object-fit: cover;" 
+                    />
+                </div>
+
+
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">
+                        The Role of Water in Shaping Earth’s Landscape
+                      </h6>
+                      <small class="text-body-secondary"
+                        >January 13, 2024</small
+                      >
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="p-4">
+              <h4 class="fst">Contributors</h4>
+              <ol class="list-unstyled mb-0">
+                <li>
+                  <a href="" style="text-decoration: none; color: black; padding-left:  20px;" 
+                    >Sean Marco Barcenilla - BSIT 2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/KKudas"
+                    style="text-decoration: none; color: black ; padding-left:  20px;"
+                    >Ralph Miguel D. Mandigma - BSIT 3</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/do-oty"
+                    style="text-decoration: none; color: black; padding-left:  20px;"
+                    >Kyle Christian Zenarosa - BSIT 2</a
+                  >
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal fade" id="faqsModal" tabindex="-1" aria-labelledby="faqsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel" style="color: #c07d9c; font-weight: bold;">FAQs</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" >
+                <p >Here are some frequently asked questions:</p>
+        <p><b style="opacity: 1;">Q: What types of flowers do you offer?</b></p>
+        <p >A: We offer a wide variety of flowers, including roses, lilies, tulips, daisies, orchids, and more. Our selection ensures you can find the perfect arrangement for any occasion.</p>
+        
+        <p><b style="opacity: 1;">Q: Do you offer same-day delivery?</b></p>
+        <p >A: Yes, we offer same-day delivery for orders placed before noon. This service ensures your flowers arrive fresh and on time, even at short notice.</p>
+        
+        <p><b style="opacity: 1;">Q: Can I customize my bouquet?</b></p>
+        <p >A: Absolutely! You can customize your bouquet to include your favorite flowers and colors. Whether you prefer a classic mix or a unique arrangement, we can tailor it to your specifications.</p>
+        
+        <p><b style="opacity: 1;">Q: What occasions do you provide floral arrangements for?</b></p>
+        <p >A: We provide floral arrangements for a wide range of occasions, including birthdays, anniversaries, weddings, corporate events, and more. Each arrangement is designed to suit the theme and sentiment of the occasion.</p>
+        
+        <p><b style="opacity: 1;">Q: How do I place an order?</b></p>
+        <p>A: You can place an order directly through our website or by contacting our customer service team. Simply browse our selection, choose your desired arrangement, and follow the prompts to complete your order.</p>
+        
+        <p><b style="opacity: 1;">Q: What payment methods do you accept?</b></p>
+        <p >A: We accept various payment methods, including credit/debit cards, PayPal, and other secure online payment options. Payment details are encrypted and processed securely to ensure your information remains protected.</p>
+            </div>
+           
+          </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel" style=" font-weight: bold;">Terms and Service</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body "  >
+                <p><b>Our Terms of Service:</b></p>
+    
+                <p><b>1. Delivery times:</b> Delivery estimates are provided but not guaranteed. Factors like weather and traffic may affect delivery schedules.</p>
+                <p><b>2. Substitutions:</b> We reserve the right to substitute flowers of equal or greater value in case of supply shortages or quality concerns. Customers will be notified of substitutions whenever possible.</p>
+                <p><b>3. Accuracy of information:</b> Customers must provide accurate delivery information, including recipient details. Incorrect information may lead to delivery delays or failures.</p>
+                <p><b>4. Reporting issues:</b> Any issues with orders (e.g., damage, incorrect items) must be reported within 24 hours of delivery for prompt resolution.</p>
+                <p><b>5. Price and availability:</b> Prices and product availability may change without prior notice. We strive to maintain accurate information on our website, but errors may occur.</p>
+                <p><b>6. Agreement:</b> By placing an order, you agree to these terms and conditions. Please review them carefully before making a purchase.</p>
+                <p><b>7. Returns and exchanges:</b> We accept returns and exchanges within 24 hours of purchase for items in their original condition. Customers are responsible for return shipping costs.</p>
+                <p><b>8. Refunds:</b> Refunds will be issued to the original form of payment within 7-10 business days after receiving the returned item.</p>
+                <p><b>9. Customer support:</b> Our customer support team is available 24/7 to assist with any questions or concerns regarding your order or our services.</p>
+            </div>
+              </div>
+              
+          </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel" style=" font-weight: bold;">Privacy Policy</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" >
+                <p><b style="opacity: 1;">Our Privacy Policy:</b></p>
+                <p>We are committed to protecting your privacy. We use the information we collect about you to process orders, provide customer service, and improve our products and services. This policy outlines how we collect, use, and protect your personal information.</p>
+                <p><b style="opacity: 1;">Information Collection and Use:</b></p>
+                <p>We collect personal information when you register on our site, place an order, subscribe to our newsletter, or fill out a form. This information may include your name, email address, mailing address, phone number, and credit card information. We use this information to process transactions, send periodic emails, and improve our website.</p>
+                <p><b style="opacity: 1;">How We Protect Your Information:</b></p>
+                <p>We implement a variety of security measures to maintain the safety of your personal information when you place an order or enter, submit, or access your personal information. These security measures include encryption, secure server hosting, and regular security audits.</p>
+                <p><b style="opacity: 1;">Disclosure to Third Parties:</b></p>
+                <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, as long as those parties agree to keep this information confidential.</p>
+                <p><b style="opacity: 1;">Changes to Our Privacy Policy:</b></p>
+                <p>We may update this policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We encourage you to review this policy periodically for any changes. Your continued use of our website after any changes indicates your acceptance of those changes.</p>
+         
+              </div>
+              
+          </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="returnsModal" tabindex="-1" aria-labelledby="returnsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel" style=" font-weight: bold;">Returns and Refunds</h5>
+    
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" >
+                <p><b style="opacity: 1;">Our Returns & Refunds Policy:</b></p>
+                <p>If you are not satisfied with your purchase, please contact us within 24 hours of delivery. We will work with you to make it right, including offering a replacement or refund if necessary.</p>
+                <p>Please note that certain conditions apply and not all products are eligible for returns or refunds. For instance, personalized and custom orders cannot be returned unless they arrive damaged or defective.</p>
+                <p>To initiate a return, please follow these steps:</p>
+                <ol>
+                    <li>Contact our customer service team via email or phone to request a return authorization.</li>
+                    <li>Provide your order number, the reason for the return, and any supporting photographs if the product is damaged or defective.</li>
+                    <li>Our team will review your request and provide instructions for returning the item if eligible.</li>
+                </ol>
+                <p>Once your return is received and inspected, we will notify you of the approval or rejection of your refund. If approved, your refund will be processed, and a credit will automatically be applied to your original method of payment within a certain number of days.</p>
+                <p>Exceptions to our return policy include:</p>
+                <ul>
+                    <li>Items purchased on sale or clearance.</li>
+                    <li>Perishable goods such as flowers and plants that are not returned in their original condition.</li>
+                   
+                </ul>
+            
+              </div>
+             
+          </div>
+      </div>
+    </div>
+    
+   
+    
+    <div class="container">
+      <hr>
+      <footer class="py-5" >
+          <div class="row">
+              <div class="col-6 col-md-3 mb-3">
+                  <h5 ><b><i class="bi bi-geo-alt-fill"></i> Contact Information</b></h5>
+                  <ul class="nav flex-column">
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Address: Banilad, Cebu</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Phone: +1234567890</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Email: water_godz@gmail.com</a></li>
+                  </ul>
+              </div>
+  
+              <div class="col-6 col-md-3 mb-3">
+                  <h5 ><b><i class="bi bi-grid-3x3-gap-fill"></i> Other Sections</b></h5>
+                  <ul class="nav flex-column">
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" data-bs-toggle="modal" data-bs-target="#faqsModal">FAQs</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a></li>
+                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
+                     
+                  </ul>
+              </div>
+  
+              <div class="col-md-5 offset-md-1 mb-3">
+                  <h5 ><b>Subscribe to our newsletter <i class="bi bi-envelope-fill"></i></b></h5>
+                  <p class="text-muted">Stay updated with our latest promotions and products.</p>
+
+                  <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                      <label for="newsletter1" class="visually-hidden">Email address</label>
+                      <input id="newsletter1" type="text" class="form-control" placeholder="">
+                      <button type="submit" name="submit" class="btn btn-custom" style="background-color: grey; color: white;"><b>Subscribe</b></button>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-light">
+              <p >&copy; 2024 WaterGodz™ Production, Inc. All rights reserved.</p>
+              <ul class="list-unstyled d-flex">
+                  <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/profile.php?id=100054209723669"><i class="bi bi-twitter"></i></a></li>
+                  <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/profile.php?id=100054209723669"><i class="bi bi-instagram"></i></a></li>
+                  <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/profile.php?id=100054209723669"><i class="bi bi-facebook"></i></a></li>
+              </ul>
+          </div>
+      </footer>
+  </div>
+  
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  
+    </body>
+    </html>
+    
+    
+    
+    
+</html>
